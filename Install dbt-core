@@ -1,0 +1,3 @@
+pip install dbt-core==1.6.1
+pip install dbt-duckdb==1.6.0
+pip install duckdb==0.90
