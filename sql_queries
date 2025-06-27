@@ -1,0 +1,34 @@
+import duckdb
+import pandas as pd
+
+sql_query = '''
+show tables
+'''
+
+with duckdb.connect('dataset/nyc_parking_violations.db') as con:
+    display(con.sql(sql_query).df())
+
+
+ sql_query_import_1 = '''
+CREATE OR REPLACE TABLE violation_code_reference AS
+SELECT *
+FROM read_csv_auto(
+  'data/parking_violation_codes_reference.csv',
+  normalize_names=True
+)
+'''
+
+sql_query_import_2 = '''
+CREATE OR REPLACE TABLE violations_fy2023_records AS
+SELECT * 
+FROM read_csv_auto(
+  'data/fiscal_year_2023_parking_violations_sample.csv',
+  normalize_names=True
+)
+'''
+
+import duckdb
+
+with duckdb.connect('/data/nyc_parking_violations.db') as con:
+    con.sql(sql_query_import_1)
+    con.sql(sql_query_import_2)
