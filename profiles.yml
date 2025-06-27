@@ -1,4 +1,9 @@
 Open terminal and type:
+$ dbit init 
+
+#Create a new project called nyc_parking_violations
+#Enter a number: 1 - says no sample profile found and hence we create one:
+
 $ cd new_york_parking_violations/
 $ touch profiles.yml
 
