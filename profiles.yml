@@ -3,7 +3,7 @@ $ cd new_york_parking_violations/
 $ touch profiles.yml
 
 This will create a new profiles.yml file and add the content:
-default:
+new_york_parking_violations:
   outputs:
     dev:
         type:duckdb
