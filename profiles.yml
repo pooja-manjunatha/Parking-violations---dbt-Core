@@ -1,0 +1,10 @@
+Open terminal and type:
+$ cd new_york_parking_violations/
+$ touch profiles.yml
+
+This will create a new profiles.yml file and add the content:
+default:
+  outputs:
+    dev:
+        type:duckdb
+    target: dev
